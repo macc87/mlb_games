@@ -271,44 +271,6 @@ get_mlb_data <- function(dataName)
   
   # Selected Data ----------------------------------------------------------
   # Separating data of teams  ----------------------------------------------
-  visitingCols <- c(
-    "GAME_ID",
-    "Date", # Date
-    "VT", # Visiting Team
-    "VS", # Visiting Score
-    # Visiting Offensive Stats
-    "VatB", # Visiting at Bat times
-    "V1B", # Visiting Hits
-    "V2B", # Visiting Doubles
-    "V3B", # Visiting Triples
-    "VHr", # Visiting Homeruns
-    "VRBI", # Visiting Run Batted In (RBI)
-    "VSH", # Visiting Sacrifice Hits
-    "VSF", # Visiting Sacrifice Flies
-    "VHP", # Visiting Hit by Pitch
-    "VW", # Visiting Walks
-    "VIW", # Visiting Intentional Walks
-    "VSO", # Visiting Strike Outs
-    "VSB", # Visiting Stolen Bases
-    "VCS", # Visiting Caught Stealing
-    "VGDP", # Visiting grounded in Double Plays
-    "VAFCI", # Visiting awarded first on catcher's interference
-    "VLB", # Visiting left on base
-    # Visiting Pitching Stats
-    "VPU", # Visiting pitchers used ( 1 means it was a complete game )
-    "VIER", # Visiting individual earned runs
-    "VTER", # Visiting team earned runs
-    "VWP", # Visiting wild pitches
-    "VB", # Visiting balks
-    # Visiting team defensive statistics
-    "VPO", # Visiting putouts
-    "VA", # Visiting assists
-    "VE", # Visiting errors
-    "VPB", # Visiting passed balls
-    "vDP", # Visiting double plays
-    "VTP" # Visiting triple plays
-  )
-  
   homeCols <- c(
     "GAME_ID",
     "Date", # Date

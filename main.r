@@ -1,4 +1,5 @@
 
+
 data2010 <- get_mlb_data('data/retrosheet/GL2010.txt')
 data2011 <- get_mlb_data('data/retrosheet/GL2011.txt')
 data2012 <- get_mlb_data('data/retrosheet/GL2012.txt')

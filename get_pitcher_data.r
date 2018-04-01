@@ -14,15 +14,19 @@ starting_pitcher <- function(ds, game_id, team_id){
   
   ds_pitcher_last_entry <- subset(ds_pitcher_game,
                                   ds_pitcher_game$EVENT_ID == pitcher_max_event_id)
+  ds_pitcher_strikeouts <- subset(ds_pitcher_game, 
+                                  ds_pitcher_game$EVENT_CD == 3) # strike out code
+  pitcher_strikeouts <- nrow(ds_pitcher_strikeouts)
   retn <- c(
     game_id,
     team_id,
     toString(ds_pitcher_last_entry$PIT_ID),
     ds_pitcher_last_entry$INN_CT,
-    3 * (ds_pitcher_last_entry$INN_CT - 1) + ds_pitcher_last_entry$OUTS_CT + ds_pitcher_last_entry$EVENT_OUTS_CT
+    3 * (ds_pitcher_last_entry$INN_CT - 1) + ds_pitcher_last_entry$OUTS_CT + ds_pitcher_last_entry$EVENT_OUTS_CT,
+    pitcher_strikeouts
   )
   retn <- rbind(retn)
-  cols <- c('GAME_ID', 'Team', 'PITCH_ID', 'PITCH_INN_CT', 'PITCH_OUTS')
+  cols <- c('GAME_ID', 'Team', 'PITCH_ID', 'PITCH_INN_CT', 'PITCH_OUTS', 'STRIKEOUTS')
   colnames(retn) <- cols
   rownames(retn) <- NULL  
   

@@ -36,6 +36,9 @@ data2015 <- merge_pitchers_data(data2015, pbp2015)
 
 data10_15 <- rbind(data2010, data2011, data2012, data2013, data2014, data2015)
 
+data10_15$`1B` <- data10_15$`1B` - (data10_15$`2B` + data10_15$`3B` + data10_15$Hr)
+data10_15$W <- data10_15$W + data10_15$HP + data10_15$IW
+
 write.csv(data2010, "output/season_2010.csv")
 write.csv(data2011, "output/season_2011.csv")
 write.csv(data2012, "output/season_2012.csv")
